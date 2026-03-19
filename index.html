@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Recruiter Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0f1419;
+      --bg-secondary: #1a2027;
+      --bg-tertiary: #242d38;
+      --bg-hover: #2d3845;
+      --text-primary: #e7edf4;
+      --text-secondary: #8b98a8;
+      --text-muted: #5c6b7d;
+      --accent-blue: #3b9eff;
+      --accent-teal: #00d9c0;
+      --accent-purple: #a78bfa;
+      --accent-amber: #fbbf24;
+      --accent-rose: #f472b6;
+      --accent-green: #34d399;
+      --accent-red: #f87171;
+      --border-color: #2d3845;
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 60px 24px 100px; }
+    header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--border-color); }
+    .badge { display: inline-block; padding: 6px 14px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal)); border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+    h1 { font-size: 42px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    header p { color: var(--text-secondary); font-size: 18px; max-width: 500px; margin: 0 auto; }
+    .section { margin-bottom: 16px; border-radius: var(--radius-lg); background: var(--bg-secondary); border: 1px solid var(--border-color); overflow: hidden; transition: all 0.3s ease; }
+    .section:hover { border-color: var(--accent-blue); box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-lg); }
+    .section-header { display: flex; align-items: center; gap: 16px; padding: 20px 24px; cursor: pointer; user-select: none; transition: background 0.2s ease; }
+    .section-header:hover { background: var(--bg-hover); }
+    .section-number { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .section:nth-child(1) .section-number { background: linear-gradient(135deg, #3b9eff33, #3b9eff11); color: var(--accent-blue); }
+    .section:nth-child(2) .section-number { background: linear-gradient(135deg, #00d9c033, #00d9c011); color: var(--accent-teal); }
+    .section:nth-child(3) .section-number { background: linear-gradient(135deg, #a78bfa33, #a78bfa11); color: var(--accent-purple); }
+    .section:nth-child(4) .section-number { background: linear-gradient(135deg, #fbbf2433, #fbbf2411); color: var(--accent-amber); }
+    .section:nth-child(5) .section-number { background: linear-gradient(135deg, #f472b633, #f472b611); color: var(--accent-rose); }
+    .section:nth-child(6) .section-number { background: linear-gradient(135deg, #34d39933, #34d39911); color: var(--accent-green); }
+    .section:nth-child(7) .section-number { background: linear-gradient(135deg, #f8717133, #f8717111); color: var(--accent-red); }
+    .section:nth-child(8) .section-number { background: linear-gradient(135deg, #3b9eff33, #3b9eff11); color: var(--accent-blue); }
+    .section:nth-child(9) .section-number { background: linear-gradient(135deg, #00d9c033, #00d9c011); color: var(--accent-teal); }
+    .section:nth-child(10) .section-number { background: linear-gradient(135deg, #a78bfa33, #a78bfa11); color: var(--accent-purple); }
+    .section:nth-child(11) .section-number { background: linear-gradient(135deg, #fbbf2433, #fbbf2411); color: var(--accent-amber); }
+    .section:nth-child(12) .section-number { background: linear-gradient(135deg, #f472b633, #f472b611); color: var(--accent-rose); }
+    .section-title { flex: 1; font-size: 17px; font-weight: 600; }
+    .section-toggle { width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--bg-tertiary); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+    .section-toggle svg { width: 14px; height: 14px; stroke: var(--text-secondary); transition: transform 0.3s ease; }
+    .section.open .section-toggle svg { transform: rotate(180deg); }
+    .section-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .section.open .section-content { max-height: 20000px; }
+    .section-body { padding: 0 24px 24px; }
+    .subsection { margin-top: 12px; border-radius: var(--radius-md); background: var(--bg-tertiary); border: 1px solid transparent; overflow: hidden; transition: all 0.2s ease; }
+    .subsection:hover { border-color: var(--border-color); }
+    .subsection-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; transition: background 0.2s ease; }
+    .subsection-header:hover { background: var(--bg-hover); }
+    .subsection-icon { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0; }
+    .subsection-title { flex: 1; font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+    .subsection-toggle { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
+    .subsection-toggle svg { width: 12px; height: 12px; stroke: var(--text-muted); transition: transform 0.3s ease; }
+    .subsection.open .subsection-toggle svg { transform: rotate(180deg); }
+    .subsection.open .subsection-icon { background: var(--accent-teal); }
+    .subsection.open .subsection-title { color: var(--text-primary); }
+    .subsection-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .subsection.open .subsection-content { max-height: 10000px; }
+    .subsection-body { padding: 4px 18px 18px; font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+    .intro-text { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.8; }
+    .subsection-body p { margin-bottom: 12px; }
+    .subsection-body p:last-child { margin-bottom: 0; }
+    .highlight { color: var(--text-primary); font-weight: 500; }
+    .code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg-primary); padding: 2px 8px; border-radius: 4px; color: var(--accent-teal); }
+    .score-band { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--bg-primary); border-radius: var(--radius-sm); margin-bottom: 8px; flex-wrap: wrap; }
+    .score-band:last-child { margin-bottom: 0; }
+    .score-range { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; min-width: 70px; }
+    .score-band.green .score-range { color: var(--accent-green); }
+    .score-band.teal .score-range { color: var(--accent-teal); }
+    .score-band.yellow .score-range { color: var(--accent-amber); }
+    .score-band.red .score-range { color: var(--accent-red); }
+    .score-label { font-weight: 600; min-width: 90px; }
+    .score-desc { color: var(--text-muted); font-size: 13px; }
+    .filter-item { display: flex; gap: 10px; padding: 8px 12px; background: var(--bg-primary); border-radius: var(--radius-sm); margin-bottom: 6px; font-size: 13px; }
+    .filter-name { font-family: 'JetBrains Mono', monospace; color: var(--accent-purple); min-width: 120px; flex-shrink: 0; }
+    .filter-desc { color: var(--text-secondary); }
+    .warning-box { background: linear-gradient(135deg, #f8717122, #f8717108); border: 1px solid #f8717144; border-radius: var(--radius-sm); padding: 14px 16px; margin: 12px 0; }
+    .warning-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-red); margin-bottom: 6px; }
+    .tip-box { background: linear-gradient(135deg, #3b9eff22, #3b9eff08); border: 1px solid #3b9eff44; border-radius: var(--radius-sm); padding: 14px 16px; margin: 12px 0; }
+    .tip-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-blue); margin-bottom: 6px; }
+    .note-box { background: linear-gradient(135deg, #a78bfa22, #a78bfa08); border: 1px solid #a78bfa44; border-radius: var(--radius-sm); padding: 14px 16px; margin: 12px 0; }
+    .note-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-purple); margin-bottom: 6px; }
+    .gate-box { background: var(--bg-primary); border-left: 3px solid var(--accent-purple); padding: 14px 16px; margin: 12px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .gate-title { font-weight: 600; color: var(--accent-purple); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hard-rule { background: var(--bg-primary); border-left: 3px solid var(--accent-red); padding: 14px 16px; margin: 12px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .hard-rule-title { font-weight: 600; color: var(--accent-red); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .tag-example { display: inline-block; padding: 4px 10px; background: var(--bg-primary); border-radius: 12px; font-size: 12px; margin: 2px 4px 2px 0; color: var(--text-secondary); border: 1px solid var(--border-color); }
+    .flow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 16px; background: var(--bg-primary); border-radius: var(--radius-sm); margin: 12px 0; }
+    .flow-step { padding: 8px 14px; background: var(--bg-tertiary); border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; }
+    .flow-arrow { color: var(--text-muted); font-size: 18px; }
+    .config-block { background: var(--bg-primary); border-radius: var(--radius-sm); padding: 16px; margin: 12px 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; white-space: pre-wrap; color: var(--text-secondary); border: 1px solid var(--border-color); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--bg-tertiary); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--border-color); }
+    @media (max-width: 600px) {
+      .container { padding: 40px 16px 80px; }
+      h1 { font-size: 32px; }
+      .section-header { padding: 16px 18px; }
+      .section-title { font-size: 15px; }
+      .section-body { padding: 0 18px 18px; }
+      .flow { flex-direction: column; }
+      .flow-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Documentation</div>
+      <h1>Affiliate Recruiter Guide</h1>
+      <p>Written for someone sitting at the tool for the first time.</p>
+    </header>
+
+    <!-- Section 1: WHAT THIS TOOL DOES -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">1</div>
+        <div class="section-title">What This Tool Does</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">This tool helps you find and recruit affiliate partners for your program. You bring in a list of potential partners (called prospects), the system pulls real data about them, the AI scores them on how good a fit they are, and then you reach out to the ones worth contacting.</p>
+          
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Five Pipelines</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>There are five separate pipelines - one for each type of platform:</p>
+                <p><span class="highlight">Website, TikTok, Instagram, YouTube, Reddit</span></p>
+                <p>Each pipeline is its own tab. They all work similarly but have different data and slightly different steps.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The General Flow</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>The general flow on every pipeline is:</p>
+                <div class="flow">
+                  <div class="flow-step">ADD prospects</div>
+                  <div class="flow-arrow">›</div>
+                  <div class="flow-step">ENRICH (fetch their real data)</div>
+                  <div class="flow-arrow">›</div>
+                  <div class="flow-step">SCORE (AI evaluates fit)</div>
+                  <div class="flow-arrow">›</div>
+                  <div class="flow-step">REVIEW</div>
+                  <div class="flow-arrow">›</div>
+                  <div class="flow-step">REACH OUT</div>
+                </div>
+                <p>You do not have to do everything at once. You can import a batch today, enrich tomorrow, and review scores when you have time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: THINGS THAT ARE THE SAME ON EVERY PAGE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">2</div>
+        <div class="section-title">Things That Are the Same on Every Page</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">Before getting into each pipeline, here are things that work the same everywhere.</p>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Filter Panel</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>At the top of every pipeline there is a filter panel with four rows. These let you narrow down what you see in the table.</p>
+                
+                <p><span class="highlight">UPDATED row:</span> Filters by when the record was last changed.</p>
+                <div class="filter-item"><span class="filter-name">"All time"</span><span class="filter-desc">shows everything (default)</span></div>
+                <div class="filter-item"><span class="filter-name">"Last hour"</span><span class="filter-desc">useful when enrichment or scoring is running and you want to watch progress</span></div>
+                <div class="filter-item"><span class="filter-name">"Today"</span><span class="filter-desc">good starting view for your daily session</span></div>
+                <div class="filter-item"><span class="filter-name">"Yesterday"</span><span class="filter-desc">catch up after a day off</span></div>
+                <div class="filter-item"><span class="filter-name">"Last 7 days"</span><span class="filter-desc">good for weekly review</span></div>
+
+                <p style="margin-top: 16px;"><span class="highlight">STATUS row:</span> Filters by where a prospect is in the process.</p>
+                <div class="filter-item"><span class="filter-name">"all"</span><span class="filter-desc">shows everything</span></div>
+                <div class="filter-item"><span class="filter-name">"pending"</span><span class="filter-desc">added but not yet enriched or scored</span></div>
+                <div class="filter-item"><span class="filter-name">"enriched"</span><span class="filter-desc">data has been fetched, ready to score (Website pipeline only)</span></div>
+                <div class="filter-item"><span class="filter-name">"scored"</span><span class="filter-desc">AI has scored this prospect</span></div>
+                <div class="filter-item"><span class="filter-name">"approved"</span><span class="filter-desc">you manually marked this one as worth pursuing</span></div>
+                <div class="filter-item"><span class="filter-name">"rejected"</span><span class="filter-desc">you manually marked this one as not a fit</span></div>
+                <p>The number in parentheses next to each status tells you how many records are in that state.</p>
+
+                <p style="margin-top: 16px;"><span class="highlight">AI SCORE row:</span> Filters by what the AI recommended.</p>
+                <div class="filter-item"><span class="filter-name">"All"</span><span class="filter-desc">shows everyone with a score</span></div>
+                <div class="filter-item"><span class="filter-name">"Strong Yes"</span><span class="filter-desc">score 80-100 (green)</span></div>
+                <div class="filter-item"><span class="filter-name">"Yes"</span><span class="filter-desc">score 60-79 (teal/green)</span></div>
+                <div class="filter-item"><span class="filter-name">"Maybe"</span><span class="filter-desc">score 40-59 (yellow)</span></div>
+                <div class="filter-item"><span class="filter-name">"No"</span><span class="filter-desc">score 0-39 (red)</span></div>
+                <p>You can click MULTIPLE options at once. For example, click "Strong Yes" and "Yes" to see only the best prospects.</p>
+
+                <p style="margin-top: 16px;"><span class="highlight">TAGS row:</span> If you have applied any tags, they appear here as clickable pills. Click a tag to show only prospects with that tag. Click multiple tags to show anyone who has any of those tags.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Toolbar</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Above the table there is a row of buttons. They operate on whatever rows you have selected (checked). Here is what each one does:</p>
+                <p><span class="highlight">SELECT ALL / DESELECT ALL:</span> Checks or unchecks all rows currently visible in the filtered table. It only selects what is visible, so filter first if you want to work on a specific group.</p>
+                <p><span class="highlight">APPROVE (N):</span> Marks selected prospects as "approved." This is just your way of flagging them as worth pursuing. It does not send anything or do anything automatically.</p>
+                <p><span class="highlight">REJECT (N):</span> Marks selected prospects as "rejected." They stay in the system but get out of your way. Use this to keep the pipeline clean.</p>
+                <p><span class="highlight">DELETE (N):</span> Permanently deletes the selected records. There is a confirmation prompt. Cannot be undone - only delete real junk.</p>
+                <p><span class="highlight">TAG INPUT + TAG (N):</span> There is a text box where you type a tag name. Select your prospects, type the tag, click the Tag button. That label is now attached to all selected prospects. You can type a new tag or click the dropdown to pick an existing one. Tags are color-coded and appear under the prospect's name in the table.</p>
+                <p><span class="highlight">DM SENT:</span> On TikTok and Instagram, there is a bulk "DM Sent" button. Select accounts you have messaged, click this, and they get marked as DM Sent. This is a manual tracker - no DMs are actually sent automatically.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Table</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Every pipeline has a table with rows for each prospect. Some columns are the same everywhere:</p>
+                <p><span class="highlight">Checkbox (far left):</span> Click to select this row for bulk actions. Click the checkbox in the header to select all visible rows.</p>
+                <p><span class="highlight">Notes column:</span> If a prospect has notes, you will see the text. If not, you will see small gray text that says "+ note." Click that text once to open an edit box. Type your note. Click somewhere else on the page (or press Ctrl+Enter) and it saves automatically. Use this for anything: email addresses you found manually, impressions from looking at their content, follow-up reminders, anything.</p>
+                <p><span class="highlight">Samples column:</span> A small checkbox. Check it when you have sent this person product samples. That is all it does - it is a manual tracker so you can see at a glance who has received samples.</p>
+                <p><span class="highlight">Updated column:</span> Shows how long ago this record was last changed - "3m ago," "Today," "Yesterday," or a date. Click the column header to sort by most or least recently updated.</p>
+                <p><span class="highlight">Score column:</span> The AI's 0-100 fit score. Click the column header to sort high to low or low to high. A down arrow or up arrow will appear next to "Score" to show which direction you are sorted.</p>
+                <p><span class="highlight">Rec. column:</span> The AI's recommendation as a colored badge: strong_yes (green), yes (lighter green), maybe (yellow), no (red).</p>
+                <p><span class="highlight">Actions column:</span> On the far right of each row there are small buttons. Usually a "Details" button that opens a full detail panel, and a "DM Sent" toggle button for social pipelines.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Details Panel</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Clicking the "Details" button on any row opens a panel with full information about that prospect - all their stats, the AI's reasoning, strengths, weaknesses, and the outreach tool (email or DM generator).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Score Bands - What the Numbers Mean</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <div class="score-band green"><span class="score-range">80-100</span><span class="score-label">Strong Yes.</span><span class="score-desc">Best prospects. Go here first.</span></div>
+                <div class="score-band teal"><span class="score-range">60-79</span><span class="score-label">Yes.</span><span class="score-desc">Solid. Worth reaching out.</span></div>
+                <div class="score-band yellow"><span class="score-range">40-59</span><span class="score-label">Maybe.</span><span class="score-desc">Use your judgment.</span></div>
+                <div class="score-band red"><span class="score-range">0-39</span><span class="score-label">No.</span><span class="score-desc">Generally skip.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: WEBSITE PIPELINE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">3</div>
+        <div class="section-title">Website Pipeline</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What This Is For</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Recruiting affiliates who have websites - bloggers, review sites, coupon sites, content publishers. You import a list, the system visits each site, reads the content, and the AI scores how good a fit they are.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How to Add Prospects</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Upload a CSV export from the publisher recruiting tool you use. Use the import button at the top of the page. The system auto-detects the file format.</p>
+                <div class="note-box">
+                  <div class="label">Note</div>
+                  <p>If your CSV contains any Instagram or Twitter URLs, those automatically get routed to the Instagram pipeline. You do not need to separate them manually.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Website Columns</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Website:</span> The prospect's domain name. Click it to open their website in a new tab. If you see a URL that looks wrong or broken, that came from the CSV.</p>
+                <p><span class="highlight">Niche:</span> This shows up after enrichment. It's a small badge showing the content style (like "Blog" or "Review Site") plus topic tags the scraper found (like "health," "wellness," "pharmacy"). If this column is empty, the site has not been enriched yet.</p>
+                <p><span class="highlight">Aff. Signals:</span> Also shows up after enrichment. These are badges showing affiliate networks the scraper found on the site - things like ShareASale, Awin, CJ, Impact. If you see network badges here, this person is already running affiliate links and knows how it works. If the column is empty, no networks were found.</p>
+                <p><span class="highlight">Score / Rec:</span> The AI's score and recommendation. Empty until you run Analyze.</p>
+                <p><span class="highlight">Updated:</span> When this record was last changed.</p>
+                <p><span class="highlight">Notes / Samples:</span> See section 2 above.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Website Toolbar Buttons</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>The extra ones specific to this pipeline:</p>
+                <p><span class="highlight">ENRICH PENDING:</span> This button visits every prospect's website and scrapes real content. It looks for affiliate network mentions, contact email addresses, what topics they cover, and what type of content they publish. This takes time - it is running a real web browser on each site. The button turns GREEN when there are pending (unenriched) rows waiting. That is your signal to click it. After enrichment, you will see the Niche and Aff. Signals columns fill in.</p>
+                <p><span class="highlight">ANALYZE ENRICHED:</span> After enrichment, click this to send all enriched data to the AI for scoring. The button turns GREEN when there are enriched rows ready to score. Run Enrich first, then Analyze. The system will not score a prospect that has not been enriched.</p>
+                <p><span class="highlight">DELETE SELECTED:</span> Permanently deletes the selected rows.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Details Panel (Website)</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Click "Details" on any row to open the full panel. It has two sections:</p>
+                <p><span class="highlight">ENRICH RESULTS section:</span> Shows you what the scraper actually found: topics, affiliate networks, a contact email if one was on the page, and the content style. This is what the AI used as input.</p>
+                <p><span class="highlight">AI ANALYSIS section:</span> Shows the AI's score, its written reasoning (2-3 sentences), a list of strengths, and a list of weaknesses. If you see "No analysis yet," this prospect has not been scored.</p>
+                <p><span class="highlight">Generate Email button:</span> At the bottom of the panel. Click it to generate a personalized outreach email for this prospect. The email uses their site content and your program details. After generating, you can edit the text directly and then click "Send via Outlook" to send it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How Website Scoring Works</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>The AI checks three gates in order. Failing any gate caps the score immediately and nothing after that matters.</p>
+                
+                <div class="gate-box">
+                  <div class="gate-title">Gate 1 - Red Flags</div>
+                  <p>If the site matches anything on your red flags list (configured in Settings), the score is capped at 20 and it is always a No. End of evaluation.</p>
+                </div>
+
+                <div class="gate-box">
+                  <div class="gate-title">Gate 2 - Affiliate Presence</div>
+                  <p>We only want people who are already running affiliate traffic. If they have never done it, we move on.</p>
+                  <p>Zero networks, zero signals, not running Facebook Ads = score capped at 25. Always No.</p>
+                  <p>1-2 signals only, no Facebook Ads = score capped at 50. Capped at Maybe.</p>
+                  <p>3+ partners, OR a recognized network found, OR 2+ signals, OR running Facebook Ads = affiliate gate cleared, move to Gate 3.</p>
+                  <p style="margin-top: 8px;"><span class="highlight">Special note:</span> Running Facebook Ads counts as proof they understand promotion and traffic. It automatically clears the affiliate gate even if their affiliate network presence is thin.</p>
+                </div>
+
+                <div class="gate-box">
+                  <div class="gate-title">Gate 3 - Niche Fit</div>
+                  <p>No connection to your target niches = score capped at 35. Always No.</p>
+                  <p>Adjacent or tangential niche = score capped at 55. Capped at Maybe.</p>
+                  <p>Strong niche match = proceed to full scoring.</p>
+                </div>
+
+                <p style="margin-top: 16px;"><span class="highlight">FINAL SCORING (only if all three gates cleared)</span></p>
+                <div class="score-band green"><span class="score-range">80-100</span><span class="score-label">Strong Yes</span><span class="score-desc">Strong niche + 5 or more affiliate partners + bonus signals present.</span></div>
+                <div class="score-band teal"><span class="score-range">60-79</span><span class="score-label">Yes</span><span class="score-desc">Good niche + 3 or more affiliate partners + content type aligns.</span></div>
+                <div class="score-band yellow"><span class="score-range">40-59</span><span class="score-label">Maybe</span><span class="score-desc">Right niche + only 1-2 partners, OR strong affiliate history but weaker niche.</span></div>
+                <div class="score-band red"><span class="score-range">0-39</span><span class="score-label">No</span><span class="score-desc">Failed a gate.</span></div>
+
+                <p style="margin-top: 16px;"><span class="highlight">WHAT PUSHES A SCORE UP WITHIN A BAND</span></p>
+                <p>Being on a preferred affiliate network, high relevance score from your research tool, review or comparison content style, content that directly speaks to your audience's pain points. These do not change which band you land in - they move you up within the band.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: TIKTOK PIPELINE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">4</div>
+        <div class="section-title">TikTok Pipeline</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What This Is For</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Recruiting TikTok creators - health, wellness, fitness, pharmacy, nutrition niches. This pipeline is different from Website in one important way: when you import a file and click the Import button, the system automatically enriches AND scores the accounts in one go. You do not run separate Enrich and Analyze steps.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How to Add TikTok Accounts</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">OPTION 1: IMPORT FROM CSV</span></p>
+                <p>Upload a CSV or TSV file exported from your creator research tool.</p>
+                <p>The system reads the file, pulls out all TikTok handles, shows you a preview: "Found 84 unique TikTok handles. Sample: @handle1, @handle2..."</p>
+                <p>It also shows match rate counts - how many were rated Excellent, Good, or Average by your research tool.</p>
+                <p>Before clicking Import, fill in the "Source tag" field. This automatically tags every imported account with a label like "Research Tool > TikTok > Wellness" so you know where it came from later.</p>
+                <p>Then click "Import & Auto-Score."</p>
+                <p>A progress bar appears showing three steps: Step 1/3 Importing, Step 2/3 Enriching (X/Y accounts), Step 3/3 Scoring (X/Y).</p>
+                <p>When it finishes, you get a toast message: "Import complete - 84 accounts imported, 3 duplicates skipped, 81 scored."</p>
+
+                <p style="margin-top: 16px;"><span class="highlight">OPTION 2: DISCOVER BY KEYWORD</span></p>
+                <p>Below the import panel there is a "Discover by Keyword" section.</p>
+                <p>Enter keywords separated by commas (example: "cold sore remedies, lip care, herpes treatment").</p>
+                <p>Set Min Followers and Max Followers to filter by account size.</p>
+                <p>Set Results per Keyword (default 50).</p>
+                <p>Click Discover. A progress bar appears while it searches TikTok.</p>
+                <p>When done, the accounts appear in the table below already enriched and ready to score.</p>
+                <p>After discovery you still need to click "Score All Pending" in the toolbar to get AI scores.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What the Gold Star and Red X Mean</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>In the second column of the table, every row has either a gold star (looks like ✦) or a red X.</p>
+                <p><span class="highlight">Gold star</span> = this account was successfully enriched. The system fetched real data from TikTok - followers, videos, likes, bio, location. This account is ready to score.</p>
+                <p><span class="highlight">Red X</span> = enrichment failed or has not run yet. The follower count will show 0. You can re-enrich these by selecting them and clicking "Re-enrich."</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">TikTok Columns</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Handle:</span> The TikTok username as a blue clickable link - click to open their profile. Their display name appears below the handle in smaller text. Any tags you have applied appear as colored pills under the name.</p>
+                <p><span class="highlight">Followers:</span> Their total follower count. Shown in shorthand: 45.2K, 1.3M, etc. Under 5,000 = automatic No by hard rule, no matter what else is true. Sweet spot: 10K to 2M.</p>
+                <p><span class="highlight">Avg Views:</span> Average views per video followed by the view rate in parentheses - example: "82.4K (18.2%)." The percentage is average views divided by followers. This is the key engagement metric on TikTok. Over 20% = excellent. 10-20% = good. 5-10% = acceptable. Under 5% = weak. Can exceed 100% if their content regularly goes viral on the For You page.</p>
+                <p><span class="highlight">Videos:</span> Total number of videos they have posted. More = more active and consistent creator.</p>
+                <p><span class="highlight">Score:</span> The AI's 0-100 fit score. Click the column header to sort. Arrow shows sort direction.</p>
+                <p><span class="highlight">Rec:</span> The AI recommendation badge: strong_yes (green), yes (lighter green), maybe (yellow), no (red).</p>
+                <p><span class="highlight">Aff:</span> Whether the AI found affiliate signals. A green checkmark means yes - link in bio, discount code, #ad, TikTok Shop, brand partnership language, etc. A dash means no signals were found. Important: no affiliate signals = score capped at 50 no matter what else is true.</p>
+                <p><span class="highlight">Match:</span> If the account was imported from your creator research tool, this shows the tool's own match rating: Excellent, Good, or Average. Color coded. If blank, the account was added another way.</p>
+                <p><span class="highlight">Bio:</span> A preview of their TikTok bio, truncated to 80 characters. See the full bio in the Details panel.</p>
+                <p><span class="highlight">Status:</span> A badge showing where this account is in the process: pending, scored, approved, rejected. If an email has been generated for this account, you will see a small blue "email ready" note under the status badge. If the account has been contacted via DM, you will see a green "DM sent" note.</p>
+                <p><span class="highlight">Updated:</span> How long ago this record last changed. Click the column header to sort.</p>
+                <p><span class="highlight">Notes / Samples:</span> See section 2 above.</p>
+                <p><span class="highlight">Actions:</span> Two small buttons at the end of each row: "Details" - opens the full detail panel for this account. "DM Sent" toggle button - click to mark as DM sent, click again to unmark. Turns green with a checkmark when marked.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">TikTok Toolbar Buttons</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">SCORE / SCORE ALL PENDING:</span> Sends the enriched data to the AI for scoring. If you have accounts selected, it scores those. If nothing is selected, it scores all pending accounts. The button turns GREEN when there are unscored accounts waiting. A progress bar appears while scoring runs.</p>
+                <p><span class="highlight">RE-ENRICH (N):</span> Select accounts with red X marks or zero follower counts. Click this to re-run enrichment on those specific accounts. Shows "(N)" where N is the number selected.</p>
+                <p><span class="highlight">APPROVE (N) / REJECT (N) / DELETE (N):</span> Standard bulk actions. See section 2.</p>
+                <p><span class="highlight">DM SENT (N):</span> Marks all selected accounts as DM Sent.</p>
+                <p><span class="highlight">TAG INPUT + TAG (N):</span> There is a text box where you type a tag name. Select your prospects, type the tag, click the Tag button.</p>
+                <p><span class="highlight">GENERATE EMAILS (Yes+):</span> Generates outreach emails for all accounts scored Yes or Strong Yes. If you have accounts selected, it generates only for those. If nothing is selected, it generates for all Yes and Strong Yes accounts. A counter appears while generating. When done, "email ready" appears in the Status column for each account.</p>
+                <p><span class="highlight">REGENERATE ALL (N):</span> Visible only after emails exist. Click to regenerate all previously generated emails - useful if you updated your program details and want fresh emails.</p>
+                <p><span class="highlight">EXPORT CSV:</span> Downloads the current table view as a CSV file. If accounts are selected, exports only those. Includes handle, followers, avg views, score, recommendation, affiliate signals, contact email, bio, and AI reasoning.</p>
+                <p><span class="highlight">SEND VIA OUTLOOK (N):</span> Sends generated emails for the selected accounts via your connected Outlook account. Only sends to accounts that already have a generated email AND are selected.</p>
+                <div class="warning-box">
+                  <div class="label">Important</div>
+                  <p>Send in batches of 10-15 at a time. Do not send to everyone at once. Large send bursts trigger spam filters.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">The Details Panel (TikTok)</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Click "Details" on any row to open the full panel.</p>
+                <p>At the top: a link to their TikTok profile.</p>
+                <p><span class="highlight">Stats grid:</span> Followers, Avg Views, View Rate, Videos in large bold numbers. Below that: Total Likes and Location.</p>
+                <p><span class="highlight">Research Tool Match:</span> If imported from your creator research tool, shows the match rating and a sample post title.</p>
+                <p><span class="highlight">Contact Email field:</span> If an email was found in their TikTok bio during enrichment, it pre-fills here. You can edit it manually and click Save. This is the email address the outreach goes to.</p>
+                <p><span class="highlight">Bio:</span> Their full TikTok bio text.</p>
+                <p><span class="highlight">AI Score section (if scored):</span> Large fit score number, recommendation badge, the AI's written reasoning, a bulleted list of strengths, and a bulleted list of weaknesses. The weaknesses section is especially useful - if a hard rule failed, it will say so here (e.g. "No affiliate signals detected - score capped at 50").</p>
+                <p><span class="highlight">Outreach Email section:</span> At the bottom. If no email has been generated yet, you will see a "Generate Email" button. Click it. If an email already exists, you will see the subject line and full email body in a box. There is also a "Regenerate" button if you want a fresh version. The "To:" line shows where it will be sent. Click "Send via Outlook" to send directly from this panel for just this one account.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How TikTok Scoring Works</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Three hard rules are checked first. Any one of them immediately caps the score.</p>
+                
+                <div class="hard-rule">
+                  <div class="hard-rule-title">Hard Rule 1 - Red Flag Match</div>
+                  <p>If the handle or bio matches anything on your red flags list, score is capped at 20. Always No. The weaknesses section in the Details panel will tell you which flag triggered.</p>
+                </div>
+
+                <div class="hard-rule">
+                  <div class="hard-rule-title">Hard Rule 2 - Under 5,000 Followers</div>
+                  <p>Score is capped at 35. Always No. Too small to generate meaningful affiliate revenue.</p>
+                </div>
+
+                <div class="hard-rule">
+                  <div class="hard-rule-title">Hard Rule 3 - No Affiliate Signals</div>
+                  <p>Score is capped at 50. Always Maybe. The AI found no evidence they run affiliate content - no link in bio, no discount codes, no #ad, no TikTok Shop, no brand mentions. They might still be worth a reach, but do not expect high conversion.</p>
+                </div>
+
+                <p style="margin-top: 16px;">If all three hard rules are cleared, the AI evaluates:</p>
+                <p><span class="highlight">NICHE FIT (most important factor):</span> The AI reads handle name, bio keywords, and content signals together. A fitness coach, naturopath, or pharmacist bio = strong match. This is the biggest factor.</p>
+                <p><span class="highlight">VIEW RATE (engagement):</span> Over 20% = excellent. 10-20% = good. 5-10% = acceptable. Under 5% = weak (flagged in weaknesses but not an automatic disqualifier on its own).</p>
+
+                <p style="margin-top: 16px;"><span class="highlight">FINAL BANDS</span></p>
+                <div class="score-band green"><span class="score-range">80-100</span><span class="score-label">Strong Yes</span><span class="score-desc">Strong niche + view rate 10%+ + clear affiliate signals.</span></div>
+                <div class="score-band teal"><span class="score-range">60-79</span><span class="score-label">Yes</span><span class="score-desc">Good niche + view rate 5%+ + at least one affiliate signal.</span></div>
+                <div class="score-band yellow"><span class="score-range">40-59</span><span class="score-label">Maybe</span><span class="score-desc">Right niche + some engagement but no affiliate signals, OR good signals but softer niche.</span></div>
+                <div class="score-band red"><span class="score-range">0-39</span><span class="score-label">No</span><span class="score-desc">Wrong niche, red flag, under 5k, or no signals plus weak engagement.</span></div>
+
+                <p style="margin-top: 16px;"><span class="highlight">BONUS FACTORS (push score up within a band)</span></p>
+                <p>US location is preferred. Non-US is flagged as a weakness. Verified badge is a mild positive. High cumulative total likes shows historically engaging content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: INSTAGRAM PIPELINE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">5</div>
+        <div class="section-title">Instagram Pipeline</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What This Is For</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Recruiting Instagram creators in health, wellness, beauty, and fitness niches. This pipeline is different from Website in one important way: when you import a CSV in the Website pipeline, any Instagram handles in that file are automatically sent here. You do not add them manually.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How to Add Instagram Accounts</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">OPTION 1: Automatic from CSV Import:</span> When you upload a CSV on the Website pipeline, the system reads every URL. Any TikTok or Instagram URLs get routed here automatically. You will see them appear as pending accounts.</p>
+                <p><span class="highlight">OPTION 2: Lookalike Seeds:</span> At the top of the Instagram pipeline there is a "Lookalike Seeds" section. Enter the handle of a creator you already like and the system will search for similar accounts. Use your best existing prospects as seeds to find more like them.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Instagram Columns</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Handle:</span> Their Instagram username as a clickable link. Tags appear under the name.</p>
+                <p><span class="highlight">Followers:</span> Total follower count. Sweet spot: 5,000 to 500,000.</p>
+                <p><span class="highlight">Avg Likes:</span> Average likes per post. Higher relative to follower count = more engaged audience.</p>
+                <p><span class="highlight">Engagement %:</span> Average likes divided by followers. This is the most important metric on Instagram. Under 1% on a non-private account = automatic No. 1-2% = acceptable. 2-5% = good. Over 5% = excellent.</p>
+                <p><span class="highlight">Aff:</span> Green checkmark or dash. Same as TikTok - checkmark means affiliate signals found (link in bio, discount codes, #ad, brand partnerships). Dash means none found. No affiliate signals = score capped at 50.</p>
+                <p><span class="highlight">DM Sent:</span> A small indicator in the Status column. Green "DM sent" appears when marked.</p>
+                <p><span class="highlight">Score / Rec / Updated / Notes / Samples:</span> Same as everywhere else.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Instagram Toolbar Buttons</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">ENRICH PENDING:</span> Fetches live Instagram data for accounts that have not been enriched yet. The button turns GREEN when there are accounts with 0 followers (meaning not yet enriched). Click it to pull real follower counts, engagement rates, bios, and hashtags.</p>
+                <p><span class="highlight">SCORE PENDING:</span> Sends enriched accounts to the AI for scoring. Run Enrich first.</p>
+                <p><span class="highlight">DM SENT (N):</span> Marks all selected accounts as DM Sent.</p>
+                <p>Other buttons are the same as TikTok.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How Instagram Scoring Works</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Mostly the same as TikTok. Key difference: engagement rate is measured by likes rather than views, so the percentage thresholds are lower.</p>
+                <p>Under 1% engagement = automatic No.</p>
+                <p>1-2% = acceptable.</p>
+                <p>2-5% = good.</p>
+                <p>Over 5% = excellent.</p>
+                <p>Same hard rules apply: under 5k followers, no affiliate signals, red flag match.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: YOUTUBE PIPELINE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">6</div>
+        <div class="section-title">YouTube Pipeline</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What This Is For</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Recruiting YouTube creators. More evergreen content than TikTok - videos stay discoverable for years. Works best for creators who make tutorials, reviews, or how-to content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">YouTube Columns</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Channel:</span> The channel name as a clickable link.</p>
+                <p><span class="highlight">Subscribers:</span> Total subscriber count.</p>
+                <p><span class="highlight">Avg Views:</span> Average views per video. On YouTube, view rate (views divided by subscribers) matters more than raw views. A smaller channel with 50% view rate often outperforms a bigger channel with 5% view rate.</p>
+                <p><span class="highlight">Videos:</span> Total videos on the channel.</p>
+                <p>Other columns same as other pipelines.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How YouTube Scoring Works</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Same three hard rules apply. Key differences in final scoring:</p>
+                <p><span class="highlight">VIEW RATE:</span> Over 30% = excellent (YouTube-specific threshold). 10-30% = good. Under 10% = flagged as weakness.</p>
+                <p><span class="highlight">CONTENT TYPE:</span> Tutorials, reviews, how-tos, and comparison videos are scored highest because they convert to affiliate clicks best. Vlogs and entertainment content score lower because viewers are not in buying mode.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: REDDIT PIPELINE -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">7</div>
+        <div class="section-title">Reddit Pipeline</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">What This Is For</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Recruiting subreddit moderators as affiliates. This is a different model from the other pipelines - you are not looking at individual creators, you are looking at communities and their moderators.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Reddit Columns</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Subreddit:</span> The community name (like r/SkincareAddiction). Clickable link.</p>
+                <p><span class="highlight">Members:</span> Total subscriber count for that subreddit.</p>
+                <p><span class="highlight">Moderators:</span> List of moderator usernames. These are your targets.</p>
+                <p><span class="highlight">Activity:</span> Posts per day. Higher = more engaged community.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">How Reddit Scoring Works</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Different from other pipelines. The AI scores the community, not the individual.</p>
+                <p><span class="highlight">NICHE FIT:</span> How closely does the subreddit topic align with your product?</p>
+                <p><span class="highlight">SIZE:</span> Bigger is not always better. Communities with 10K-500K members often have more engaged audiences than massive subreddits.</p>
+                <p><span class="highlight">ACTIVITY:</span> A dead subreddit is worthless. The AI checks posts per day and comment ratios.</p>
+                <p><span class="highlight">MODERATOR ACCESSIBILITY:</span> Some moderator teams are known to be open to partnerships. Others are hostile. The AI checks for signals of either.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 8: TAGS -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">8</div>
+        <div class="section-title">Tags - How They Work</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">Tags are labels you can attach to any prospect. They help you organize, filter, and track your workflow.</p>
+          
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Adding Tags</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Select the rows you want to tag. Type the tag name in the text box in the toolbar. Click the "Tag" button. The tag appears under each prospect's name in the table.</p>
+                <p>You can also add tags during import by filling in the "Source tag" field. This is useful for tracking where prospects came from.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Filtering by Tag</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>At the top of the page in the filter panel, the TAGS row shows all tags that exist on prospects in this pipeline. Click a tag pill to show only prospects with that tag. Click multiple tags to show anyone with any of those tags (OR logic).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Removing Tags</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Open the Details panel for a prospect. You will see their tags listed. Click the X next to any tag to remove it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Tag Ideas</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="tag-example">Research Tool > TikTok > Wellness</span> Source tracking</p>
+                <p><span class="tag-example">Priority</span> Your top picks</p>
+                <p><span class="tag-example">Follow Up</span> Need to check back</p>
+                <p><span class="tag-example">Responded</span> They replied</p>
+                <p><span class="tag-example">Negotiating</span> In active discussion</p>
+                <p><span class="tag-example">Cold Sore</span> <span class="tag-example">Lip Care</span> <span class="tag-example">Pharmacy</span> Product-specific tags</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 9: NOTES -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">9</div>
+        <div class="section-title">Notes - How They Work</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">Every prospect has a notes field. Use it for anything you want to remember about them.</p>
+          <p>In the table, if a prospect has no notes, you will see small gray text that says "+ note."</p>
+          <p>Click that text once. An edit box opens.</p>
+          <p>Type your note.</p>
+          <p>Click somewhere else on the page OR press Ctrl+Enter. The note saves automatically.</p>
+          <p>The note text now appears in the Notes column.</p>
+          <p>To edit, just click on the text again.</p>
+          <p><span class="highlight">What to put in notes:</span> Contact email if you found one manually. Your impression after looking at their content. When you emailed them and what happened. Follow-up reminders. Anything.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 10: SAMPLES SENT -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">10</div>
+        <div class="section-title">Samples Sent - How It Works</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">A simple manual tracker for product samples.</p>
+          <p>In the table there is a Samples column with a small checkbox.</p>
+          <p>When you send someone product samples, check the box.</p>
+          <p>That is all it does. It is a visual marker so you can see at a glance who has received samples.</p>
+          <p>You can filter by this in the filter panel if you add a "Samples Sent" column filter.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 11: OUTREACH -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">11</div>
+        <div class="section-title">Outreach - Sending Emails and DMs</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Email Outreach</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p><span class="highlight">Step 1 - Make sure there is an email address:</span> The system tries to find emails during enrichment. If it found one, you will see it in the Details panel. If not, you can manually add one in the "Contact Email" field.</p>
+                <p><span class="highlight">Step 2 - Generate the email:</span> Click "Generate Email" in the Details panel, OR use the bulk "Generate Emails (Yes+)" button in the toolbar to generate emails for all Yes and Strong Yes prospects at once. The AI writes a personalized email using your program details and the prospect's profile.</p>
+                <p><span class="highlight">Step 3 - Review and edit:</span> The generated email appears in the Details panel. Read it. Edit if needed - just click in the text and type.</p>
+                <p><span class="highlight">Step 4 - Send:</span> Click "Send via Outlook" to send from your connected Outlook account. Or use the bulk "Send via Outlook" button in the toolbar to send to multiple selected prospects at once.</p>
+                <div class="warning-box">
+                  <div class="label">Important</div>
+                  <p>Send in batches of 10-15 at a time. Do not send to everyone at once. Large send bursts trigger spam filters and can get your domain blacklisted.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">DM Outreach (TikTok / Instagram)</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>DMs are not sent automatically. This is a manual process with a tracker.</p>
+                <p><span class="highlight">Step 1:</span> Open the prospect's profile by clicking their handle.</p>
+                <p><span class="highlight">Step 2:</span> Send them a DM manually through TikTok or Instagram.</p>
+                <p><span class="highlight">Step 3:</span> Come back to the tool and click the "DM Sent" button on their row, or select multiple rows and click the bulk "DM Sent" button.</p>
+                <p>This marks them as contacted so you do not accidentally message them again.</p>
+                <p>In the Details panel, there is also a "Generate DM" button that writes a short DM script for you. Copy that text and paste it into the actual DM on TikTok or Instagram.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 12: SETTINGS -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">12</div>
+        <div class="section-title">Settings</div>
+        <div class="section-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="section-content">
+        <div class="section-body">
+          <p class="intro-text">The Settings page configures how the tool works for your program. Access it from the gear icon in the top right.</p>
+          
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Program URL</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>The URL where affiliates sign up for your program. This gets included in outreach emails. Example: https://yourprogram.partnerize.com/signup</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Outlook Connection</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Click "Connect Outlook" to link your Microsoft account. This is required for the "Send via Outlook" feature to work. You will see a green checkmark when connected.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Tags Catalog</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>Pre-define common tags here so they appear in the dropdown when tagging prospects. You can also assign colors to each tag. Tags created on-the-fly in the table are added here automatically.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-header" onclick="toggleSubsection(this)">
+              <div class="subsection-icon"></div>
+              <div class="subsection-title">Program Details</div>
+              <div class="subsection-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+            </div>
+            <div class="subsection-content">
+              <div class="subsection-body">
+                <p>This is the most important section. The AI uses everything here when scoring prospects and writing emails. Fill this in completely.</p>
+                <p><span class="highlight">Brand Name:</span> Your company or product name.</p>
+                <p><span class="highlight">Product Description:</span> What you sell, in 1-2 sentences.</p>
+                <p><span class="highlight">Target Niches:</span> The topics and audiences you want affiliates to reach. Be specific. "Health" is too broad. "Cold sore treatment, lip care, oral health, pharmacy, dermatology" is better.</p>
+                <p><span class="highlight">Commission Structure:</span> What affiliates earn. Example: "15% on first purchase, 10% recurring."</p>
+                <p><span class="highlight">Red Flags:</span> Words, phrases, or patterns that disqualify a prospect automatically. Examples: competitor brand names, controversial topics, unrelated niches. Any prospect matching a red flag gets an automatic No with a capped score.</p>
+                <p><span class="highlight">Preferred Networks:</span> Affiliate networks you already work with. Prospects already on these networks score slightly higher.</p>
+                <p><span class="highlight">Email Tone:</span> How formal or casual your outreach should be. Options: Professional, Friendly, Casual.</p>
+                <p><span class="highlight">Email Signature:</span> What goes at the bottom of every email.</p>
+
+                <p style="margin-top: 16px;"><span class="highlight">Example configuration:</span></p>
+                <div class="config-block">Brand Name: Abreva
+Product Description: FDA-approved cold sore treatment that heals cold sores fast.
+Target Niches: cold sore treatment, lip care, oral health, pharmacy, dermatology, skincare, health and wellness
+Commission Structure: 15% on first purchase, 10% on repeat purchases
+Red Flags: competitor (Carmex, Blistex), MLM, crypto, gambling, adult content, political
+Preferred Networks: ShareASale, CJ, Impact, Partnerize
+Email Tone: Friendly
+Email Signature: 
+Best,
+[Your Name]
+Abreva Affiliate Team</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      const section = header.parentElement;
+      section.classList.toggle('open');
+    }
+
+    function toggleSubsection(header) {
+      const subsection = header.parentElement;
+      subsection.classList.toggle('open');
+    }
+
+    // Close all on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.section.open').forEach(el => el.classList.remove('open'));
+        document.querySelectorAll('.subsection.open').forEach(el => el.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
