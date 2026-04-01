@@ -353,7 +353,30 @@
               <div class="subsection-body">
                 <p><span class="highlight">Website:</span> The prospect's domain name. Click it to open their website in a new tab. If you see a URL that looks wrong or broken, that came from the CSV.</p>
                 <p><span class="highlight">Niche:</span> This shows up after enrichment. It's a small badge showing the content style (like "Blog" or "Review Site") plus topic tags the scraper found (like "health," "wellness," "pharmacy"). If this column is empty, the site has not been enriched yet.</p>
-                <p><span class="highlight">Aff. Signals:</span> Also shows up after enrichment. These are badges showing affiliate networks the scraper found on the site - things like ShareASale, Awin, CJ, Impact. If you see network badges here, this person is already running affiliate links and knows how it works. If the column is empty, no networks were found.</p>
+                <p><span class="highlight">Aff. Signals:</span> Also shows up after enrichment. These badges tell you whether the prospect is actively doing affiliate marketing and which networks they use. Here is what each signal means:</p>
+                <div style="margin: 12px 0; padding: 16px; background: var(--bg-primary); border-radius: var(--radius-sm); border-left: 3px solid var(--accent-green);">
+                  <p style="font-weight: 600; margin-bottom: 8px;">Green Badges (strongest signals):</p>
+                  <p><span class="highlight">✓ Disclosure</span> - We found an affiliate disclosure page on the site (e.g. /affiliate-disclosure, /disclaimer). The FTC requires affiliates to have this page. If they have one, they are actively doing affiliate marketing. This is the single most reliable signal.</p>
+                  <p><span class="highlight">awin, shareasale, cj affiliate, rakuten, impact radius, clickbank, skimlinks</span> - We found a specific affiliate network name mentioned on the page. They are actively using that network. "awin" is especially useful because ClearWellness360 is on Awin - they can sign up immediately.</p>
+                </div>
+                <div style="margin: 12px 0; padding: 16px; background: var(--bg-primary); border-radius: var(--radius-sm); border-left: 3px solid var(--accent-amber);">
+                  <p style="font-weight: 600; margin-bottom: 8px;">Yellow Badge (moderate signal):</p>
+                  <p><span class="highlight">"4 signals" (number varies)</span> - We found affiliate-related keywords in the page content like "affiliate link," "commission," "use code," "#sponsored," "brand ambassador," or "this post contains." No specific network was detected, but they are likely doing affiliate work.</p>
+                </div>
+                <div style="margin: 12px 0; padding: 16px; background: var(--bg-primary); border-radius: var(--radius-sm); border-left: 3px solid var(--accent-red);">
+                  <p style="font-weight: 600; margin-bottom: 8px;">Red Text (weak or no signal):</p>
+                  <p><span class="highlight">"none found"</span> - No affiliate signals or disclosure page detected. This does not necessarily mean they are not an affiliate - they might use cloaked links that are hard to detect. Treat as cold outreach, lower priority.</p>
+                  <p><span class="highlight">"scrape failed"</span> - Could not load the page at all. Unknown status.</p>
+                </div>
+                <div style="margin: 12px 0; padding: 16px; background: var(--bg-primary); border-radius: var(--radius-sm); border-left: 3px solid var(--accent-blue);">
+                  <p style="font-weight: 600; margin-bottom: 8px;">Outreach Priority Order:</p>
+                  <p>1. <strong>✓ Disclosure + awin</strong> - Perfect match. Already on CW360's network.</p>
+                  <p>2. <strong>✓ Disclosure + any network</strong> - Active affiliate, knows the process.</p>
+                  <p>3. <strong>✓ Disclosure alone</strong> - Confirmed affiliate, just need to pitch.</p>
+                  <p>4. <strong>Network name alone</strong> - Active affiliate, no disclosure page found.</p>
+                  <p>5. <strong>Keyword signals only</strong> - Likely affiliate, worth reaching out.</p>
+                  <p>6. <strong>None found</strong> - Cold outreach, lower priority.</p>
+                </div>
                 <p><span class="highlight">Score / Rec:</span> The AI's score and recommendation. Empty until you run Analyze.</p>
                 <p><span class="highlight">Updated:</span> When this record was last changed.</p>
                 <p><span class="highlight">Notes / Samples:</span> See section 2 above.</p>
